@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Marketing Cashflow Program — Join Now</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --purple: #302b63;
+    --purple-dark: #1a1640;
+    --purple-light: #8b5cf6;
+    --gold: #f59e0b;
+    --gold-light: #fbbf24;
+    --green: #10b981;
+    --red: #ef4444;
+    --bg: #0a0814;
+    --surface: #13102a;
+    --surface2: #1c1840;
+    --text: #f1f0ff;
+    --text-muted: #9ca3af;
+    --border: rgba(139,92,246,0.2);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,8,20,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-brand { font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 800; color: var(--text); letter-spacing: -0.3px; }
+  .nav-brand span { color: var(--purple-light); }
+  .nav-cta {
+    background: var(--gold); color: #000; font-weight: 700; font-size: 13px;
+    padding: 8px 20px; border-radius: 6px; border: none; cursor: pointer;
+    text-decoration: none; display: inline-block;
+  }
+
+  /* ANNOUNCEMENT BAR */
+  .announcement {
+    background: linear-gradient(90deg, var(--purple-dark), var(--purple), var(--purple-dark));
+    text-align: center; padding: 10px 16px; font-size: 13px; font-weight: 600;
+    margin-top: 57px; color: #fff;
+  }
+  .announcement span { color: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    padding: 80px 24px 60px;
+    max-width: 860px; margin: 0 auto; text-align: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.3);
+    color: #a78bfa; font-size: 13px; font-weight: 600;
+    padding: 6px 16px; border-radius: 999px; margin-bottom: 28px;
+  }
+  .hero-badge .dot { width: 7px; height: 7px; background: #10b981; border-radius: 50%; }
+  .hero h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(36px, 7vw, 72px);
+    font-weight: 800; line-height: 1.05;
+    letter-spacing: -2px; margin-bottom: 24px;
+    color: #fff;
+  }
+  .hero h1 em { font-style: normal; color: var(--gold-light); }
+  .hero h1 .purple { color: var(--purple-light); }
+  .hero-sub {
+    font-size: clamp(17px, 2.5vw, 21px);
+    color: #c4b5fd; line-height: 1.6;
+    max-width: 640px; margin: 0 auto 36px;
+  }
+  .hero-sub strong { color: #fff; font-weight: 700; }
+  .hero-cta-group { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .btn-primary {
+    background: var(--gold); color: #000; font-weight: 800;
+    font-size: 18px; padding: 18px 48px; border-radius: 8px;
+    border: none; cursor: pointer; text-decoration: none;
+    display: inline-block; transition: transform 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .btn-primary:hover { transform: scale(1.02); }
+  .hero-trust { font-size: 13px; color: var(--text-muted); }
+  .hero-trust span { color: var(--green); font-weight: 600; }
+
+  /* SOCIAL PROOF STRIP */
+  .proof-strip {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    display: flex; justify-content: center;
+    flex-wrap: wrap; gap: 32px;
+  }
+  .proof-item { display: flex; align-items: center; gap: 10px; }
+  .proof-num { font-size: 22px; font-weight: 800; color: var(--gold-light); }
+  .proof-label { font-size: 13px; color: var(--text-muted); line-height: 1.3; }
+
+  /* SECTIONS */
+  section { padding: 72px 24px; max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--purple-light);
+    margin-bottom: 12px; text-align: center;
+  }
+  .section-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -1px; text-align: center;
+    margin-bottom: 16px; color: #fff;
+  }
+  .section-title em { font-style: normal; color: var(--gold-light); }
+  .section-sub { text-align: center; color: #c4b5fd; font-size: 17px; margin-bottom: 48px; }
+
+  /* PAIN SECTION */
+  .pain-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px; margin-top: 40px;
+  }
+  .pain-card {
+    background: var(--surface);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 12px; padding: 24px;
+  }
+  .pain-icon { font-size: 28px; margin-bottom: 12px; }
+  .pain-card h3 { font-size: 16px; font-weight: 700; color: #fca5a5; margin-bottom: 8px; }
+  .pain-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+  /* WHAT YOU GET */
+  .weeks-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+  .week-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px 28px;
+    display: flex; gap: 20px; align-items: flex-start;
+  }
+  .week-badge {
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+    color: #fff; font-weight: 800; font-size: 13px;
+    width: 52px; height: 52px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; text-align: center; line-height: 1.2;
+  }
+  .week-content h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .week-content p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+  .week-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .tag {
+    background: rgba(139,92,246,0.15); color: #a78bfa;
+    font-size: 11px; font-weight: 600; padding: 3px 10px;
+    border-radius: 999px; border: 1px solid rgba(139,92,246,0.2);
+  }
+
+  /* RESULTS / TESTIMONIALS */
+  .results-intro {
+    background: var(--surface);
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 12px; padding: 28px; margin-bottom: 32px;
+    text-align: center;
+  }
+  .results-intro .big-num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 56px; font-weight: 800; color: var(--green); line-height: 1;
+  }
+  .results-intro p { color: #6ee7b7; font-size: 16px; margin-top: 8px; }
+  .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .testimonial {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px;
+  }
+  .testimonial-text { font-size: 15px; color: #e0d7ff; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 10px; }
+  .avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px; color: #fff; flex-shrink: 0;
+  }
+  .author-name { font-size: 14px; font-weight: 700; color: #fff; }
+  .author-detail { font-size: 12px; color: var(--text-muted); }
+
+  /* WHO IS THIS FOR */
+  .for-list { display: flex; flex-direction: column; gap: 12px; max-width: 640px; margin: 40px auto 0; }
+  .for-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px;
+  }
+  .check { color: var(--green); font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+  .for-text { font-size: 15px; color: #e0d7ff; }
+
+  /* ABOUT INSTRUCTOR */
+  .instructor-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 40px;
+    display: flex; gap: 32px; align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .instructor-avatar {
+    width: 100px; height: 100px; border-radius: 16px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 36px; font-weight: 800; color: #fff; flex-shrink: 0;
+  }
+  .instructor-info h3 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+  .instructor-info .role { color: var(--purple-light); font-size: 14px; font-weight: 600; margin-bottom: 14px; }
+  .instructor-info p { font-size: 15px; color: #c4b5fd; line-height: 1.7; }
+  .instructor-stats { display: flex; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+  .i-stat .num { font-size: 22px; font-weight: 800; color: var(--gold-light); }
+  .i-stat .lbl { font-size: 12px; color: var(--text-muted); }
+
+  /* PRICING */
+  .pricing-card {
+    background: var(--surface);
+    border: 2px solid var(--purple-light);
+    border-radius: 20px; padding: 40px;
+    max-width: 520px; margin: 40px auto 0; text-align: center;
+    position: relative;
+  }
+  .pricing-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--gold); color: #000; font-weight: 800; font-size: 12px;
+    padding: 4px 20px; border-radius: 999px; white-space: nowrap;
+  }
+  .old-price { font-size: 18px; color: var(--text-muted); text-decoration: line-through; margin-bottom: 4px; }
+  .new-price {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 64px; font-weight: 800; color: var(--gold-light);
+    line-height: 1; margin-bottom: 4px;
+  }
+  .price-note { font-size: 14px; color: #a78bfa; margin-bottom: 28px; }
+  .price-includes { text-align: left; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; }
+  .price-include-item { display: flex; align-items: center; gap: 10px; font-size: 15px; color: #e0d7ff; }
+  .price-include-item .tick { color: var(--green); font-weight: 700; }
+  .btn-buy {
+    width: 100%; background: var(--gold); color: #000;
+    font-family: 'Inter', sans-serif; font-weight: 800;
+    font-size: 18px; padding: 18px; border-radius: 8px;
+    border: none; cursor: pointer; margin-bottom: 12px;
+  }
+  .btn-buy:hover { background: var(--gold-light); }
+  .secure-note { font-size: 12px; color: var(--text-muted); }
+
+  /* COUNTDOWN */
+  .countdown-section {
+    background: var(--surface);
+    border: 1px solid rgba(245,158,11,0.3);
+    border-radius: 12px; padding: 28px; text-align: center;
+    margin-top: 28px;
+  }
+  .countdown-label { font-size: 14px; color: var(--gold-light); font-weight: 600; margin-bottom: 16px; }
+  .countdown { display: flex; justify-content: center; gap: 16px; }
+  .cd-item { text-align: center; }
+  .cd-num {
+    background: var(--purple-dark); color: var(--gold-light);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 36px; font-weight: 800;
+    width: 70px; height: 70px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(245,158,11,0.3);
+  }
+  .cd-lbl { font-size: 11px; color: var(--text-muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 12px; margin-top: 40px; }
+  .faq-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px 24px;
+  }
+  .faq-item h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .faq-item p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: linear-gradient(135deg, var(--purple-dark), var(--surface2));
+    border: 1px solid var(--border);
+    border-radius: 20px; padding: 60px 32px;
+    text-align: center; margin: 0 24px 80px;
+    max-width: 860px; margin-left: auto; margin-right: auto;
+  }
+  .final-cta h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(28px, 5vw, 48px); font-weight: 800;
+    line-height: 1.1; letter-spacing: -1px; color: #fff; margin-bottom: 16px;
+  }
+  .final-cta h2 em { font-style: normal; color: var(--gold-light); }
+  .final-cta p { color: #c4b5fd; font-size: 17px; margin-bottom: 32px; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px; text-align: center;
+    font-size: 13px; color: var(--text-muted);
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* HOW IT WORKS */
+  .how-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 40px; }
+  .how-step { text-align: center; padding: 24px 16px; }
+  .step-num {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+    color: #fff; font-weight: 800; font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+  }
+  .how-step h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .how-step p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  @media (max-width: 600px) {
+    .week-card { flex-direction: column; }
+    .instructor-card { flex-direction: column; }
+    .proof-strip { gap: 20px; }
+    .countdown { gap: 10px; }
+    .cd-num { width: 56px; height: 56px; font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Nuel <span>Digital Vault</span></div>
+  <a href="#pricing" class="nav-cta">Join Now — ₦40,000</a>
+</nav>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+  ⚠️ Price increases soon — lock in <span>₦40,000</span> before it goes to <span>₦75,000</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <span class="dot"></span>
+    Now enrolling — DMC Program 2025
+  </div>
+  <h1>
+    Stop Wishing.<br>
+    Start <em>Earning</em> With<br>
+    Digital <span class="purple">Marketing.</span>
+  </h1>
+  <p class="hero-sub">
+    A <strong>4-week intensive program</strong> that teaches you exactly how to build
+    <strong>₦100,000–₦500,000/month</strong> selling digital products online —
+    even if you're starting from zero.
+  </p>
+  <div class="hero-cta-group">
+    <a href="#pricing" class="btn-primary">Yes, I Want ₦100k–₦500k/Month →</a>
+    <div class="hero-trust">
+      <span>✓ 500+ students enrolled</span> &nbsp;·&nbsp; No experience needed &nbsp;·&nbsp; Instant access
+    </div>
+  </div>
+</div>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-item">
+    <div class="proof-num">500+</div>
+    <div class="proof-label">Students<br>enrolled</div>
+  </div>
+  <div class="proof-item">
+    <div class="proof-num">4</div>
+    <div class="proof-label">Weeks of<br>live training</div>
+  </div>
+  <div class="proof-item">
+    <div class="proof-num">₦500k</div>
+    <div class="proof-label">Max monthly<br>potential</div>
+  </div>
+  <div class="proof-item">
+    <div class="proof-num">10+</div>
+    <div class="proof-label">Income<br>strategies</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PAIN SECTION -->
+<section>
+  <div class="section-label">Sound Familiar?</div>
+  <h2 class="section-title">You're Working Hard But <em>Still Broke</em></h2>
+  <p class="section-sub">If any of these sound like you, this program was made for you.</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">😤</div>
+      <h3>You've tried everything</h3>
+      <p>You've watched YouTube videos, joined free groups, read threads — but still haven't made a single kobo online.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">💸</div>
+      <h3>Month ends before the money</h3>
+      <p>Your income isn't enough. You know there's money online but don't know how to access your own share.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">😩</div>
+      <h3>No system, just hustle</h3>
+      <p>You're posting, selling, pushing — but with no clear funnel or strategy. It's exhausting and inconsistent.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">🤷</div>
+      <h3>Don't know where to start</h3>
+      <p>Everyone talks about digital marketing but nobody actually shows you the step-by-step of how money enters your account.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHAT YOU GET -->
+<section>
+  <div class="section-label">The Curriculum</div>
+  <h2 class="section-title">4 Weeks. Real Skills. <em>Real Money.</em></h2>
+  <p class="section-sub">Each week builds on the last — from your first digital product to your first ₦100k month.</p>
+
+  <div class="weeks-grid">
+    <div class="week-card">
+      <div class="week-badge">W1</div>
+      <div class="week-content">
+        <h3>Week 1 — Foundation & Product Creation</h3>
+        <p>Choose your niche, identify your audience, create your first digital product, and list it on platforms like Selar, SmartEarn, Stakecut and Promptearn. You leave Week 1 with a product ready to sell.</p>
+        <div class="week-tags">
+          <span class="tag">Niche selection</span>
+          <span class="tag">Product creation</span>
+          <span class="tag">Offer building</span>
+          <span class="tag">Platform setup</span>
+        </div>
+      </div>
+    </div>
+    <div class="week-card">
+      <div class="week-badge">W2</div>
+      <div class="week-content">
+        <h3>Week 2 — Sales Funnels & Traffic</h3>
+        <p>Build the funnels that do the selling for you — chat funnels, WhatsApp funnels, email funnels. Then learn how to drive consistent traffic to them organically and with paid ads.</p>
+        <div class="week-tags">
+          <span class="tag">Sales funnels</span>
+          <span class="tag">WhatsApp marketing</span>
+          <span class="tag">Traffic generation</span>
+          <span class="tag">Meta ads intro</span>
+        </div>
+      </div>
+    </div>
+    <div class="week-card">
+      <div class="week-badge">W3</div>
+      <div class="week-content">
+        <h3>Week 3 — Paid Advertising & Campaigns</h3>
+        <p>Run Facebook, Instagram and TikTok ads that actually convert. Set up your pages, create winning creatives and copies, launch lead generation campaigns and read your analytics.</p>
+        <div class="week-tags">
+          <span class="tag">FB & IG ads</span>
+          <span class="tag">TikTok ads</span>
+          <span class="tag">Campaign analytics</span>
+          <span class="tag">Landing pages</span>
+        </div>
+      </div>
+    </div>
+    <div class="week-card">
+      <div class="week-badge">W4</div>
+      <div class="week-content">
+        <h3>Week 4 — Scale, Automation & Cashflow</h3>
+        <p>Combine organic content, AI tools and affiliate marketing to create multiple cashflow streams. Learn how to put everything on autopilot and hit ₦100k–₦500k consistently every month.</p>
+        <div class="week-tags">
+          <span class="tag">AI marketing</span>
+          <span class="tag">Affiliate system</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Scale strategy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- RESULTS -->
+<section>
+  <div class="section-label">Student Results</div>
+  <h2 class="section-title">Real People. <em>Real Results.</em></h2>
+  <p class="section-sub">These are actual students who went through the DMC program and implemented what they learned.</p>
+
+  <div class="results-intro">
+    <div class="big-num">500+</div>
+    <p>Students have gone through this program and are actively building cashflow online.</p>
+  </div>
+
+  <div class="testimonials">
+    <div class="testimonial">
+      <p class="testimonial-text">"Before DMC I was just posting random content and getting zero results. Within 3 weeks of implementing what Emmanuel taught, I made my first ₦87,000 from digital products. I cried."</p>
+      <div class="testimonial-author">
+        <div class="avatar">AO</div>
+        <div>
+          <div class="author-name">Adaeze O.</div>
+          <div class="author-detail">Lagos · Made ₦87k in 3 weeks</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">"I was skeptical at first. But the week 2 funnel strategy alone changed everything for me. I now have a WhatsApp funnel running 24/7 and it consistently brings in ₦150k–₦200k monthly."</p>
+      <div class="testimonial-author">
+        <div class="avatar">KM</div>
+        <div>
+          <div class="author-name">Kelvin M.</div>
+          <div class="author-detail">Abuja · ₦150k–₦200k monthly</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">"I joined while still working a 9-5. By the end of week 4 I had already made ₦230,000. I resigned 2 months later. Emmanuel's program is the real deal — no fluff, all action."</p>
+      <div class="testimonial-author">
+        <div class="avatar">FB</div>
+        <div>
+          <div class="author-name">Fatima B.</div>
+          <div class="author-detail">Kano · Quit 9-5 after ₦230k month</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHO IS THIS FOR -->
+<section>
+  <div class="section-label">Is This For You?</div>
+  <h2 class="section-title">This Program Is <em>Perfect</em> For You If...</h2>
+
+  <div class="for-list">
+    <div class="for-item">
+      <span class="check">✓</span>
+      <span class="for-text">You're tired of being broke and want a proven digital income system that actually works in Nigeria</span>
+    </div>
+    <div class="for-item">
+      <span class="check">✓</span>
+      <span class="for-text">You're a complete beginner with no product, no audience and no experience — and want to start from scratch</span>
+    </div>
+    <div class="for-item">
+      <span class="check">✓</span>
+      <span class="for-text">You're already selling but stuck at the same income level and need a system to scale beyond ₦100k/month</span>
+    </div>
+    <div class="for-item">
+      <span class="check">✓</span>
+      <span class="for-text">You're a 9-5 worker, student or stay-at-home person who wants to build a side income that can replace your salary</span>
+    </div>
+    <div class="for-item">
+      <span class="check">✓</span>
+      <span class="for-text">You're serious about committing 4 weeks of focused effort to change your financial situation permanently</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="section-label">Access Process</div>
+  <h2 class="section-title">How to Get <em>Started</em> in 3 Steps</h2>
+  <p class="section-sub">After payment, you're inside the program in under 5 minutes.</p>
+
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="step-num">1</div>
+      <h3>Pay ₦40,000</h3>
+      <p>Click the button below and complete your payment securely via Paystack. Card, bank transfer or USSD — all accepted.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-num">2</div>
+      <h3>Get Your Access Code</h3>
+      <p>Immediately after payment, you receive an email with your unique access code and a link to the learning platform.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-num">3</div>
+      <h3>Start Learning</h3>
+      <p>Create your account, enter your code and get instant access to all 4 weeks of video lessons. Start watching immediately.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- INSTRUCTOR -->
+<section>
+  <div class="section-label">Your Instructor</div>
+  <h2 class="section-title">Learn From Someone Who <em>Actually Does It</em></h2>
+
+  <div class="instructor-card">
+    <div class="instructor-avatar">EI</div>
+    <div class="instructor-info">
+      <h3>Emmanuel Ifeanyi</h3>
+      <div class="role">Digital Marketing Expert & Founder, Nuel Digital Vault</div>
+      <p>Emmanuel has spent 4+ years in the trenches of digital marketing — not teaching theory, but actually selling digital products, running paid ads, building funnels and generating real cashflow online. He built the DMC program specifically to shortcut your learning curve and give you only what works in the Nigerian market.</p>
+      <div class="instructor-stats">
+        <div class="i-stat">
+          <div class="num">4+</div>
+          <div class="lbl">Years experience</div>
+        </div>
+        <div class="i-stat">
+          <div class="num">500+</div>
+          <div class="lbl">Students trained</div>
+        </div>
+        <div class="i-stat">
+          <div class="num">₦500k+</div>
+          <div class="lbl">Monthly potential</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-label">Enrollment</div>
+  <h2 class="section-title">One Investment. <em>Lifetime Cashflow.</em></h2>
+  <p class="section-sub">Price is going up soon. Lock in your spot at ₦40,000 today.</p>
+
+  <div class="pricing-card">
+    <div class="pricing-badge">🔥 Current Price — Increasing Soon</div>
+    <div class="old-price">₦200,000</div>
+    <div class="new-price">₦40,000</div>
+    <div class="price-note">One-time payment · Lifetime access · Instant delivery</div>
+
+    <div class="price-includes">
+      <div class="price-include-item"><span class="tick">✓</span> 4 weeks of video lessons (40+ videos)</div>
+      <div class="price-include-item"><span class="tick">✓</span> Weekly live review sessions</div>
+      <div class="price-include-item"><span class="tick">✓</span> Downloadable resources & templates</div>
+      <div class="price-include-item"><span class="tick">✓</span> Private Telegram community access</div>
+      <div class="price-include-item"><span class="tick">✓</span> Lifetime access — revisit anytime</div>
+      <div class="price-include-item"><span class="tick">✓</span> Future updates included</div>
+    </div>
+
+    <button class="btn-buy" onclick="window.location.href='https://paystack.shop/pay/DMC-Program'">
+      Pay ₦40,000 — Get Instant Access →
+    </button>
+    <div class="secure-note">🔒 Secured by Paystack · Bank transfer, card & USSD accepted</div>
+  </div>
+
+  <div class="countdown-section">
+    <div class="countdown-label">⏳ Price increases when this timer hits zero</div>
+    <div class="countdown">
+      <div class="cd-item">
+        <div class="cd-num" id="cd-days">07</div>
+        <div class="cd-lbl">Days</div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-num" id="cd-hours">23</div>
+        <div class="cd-lbl">Hours</div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-num" id="cd-mins">59</div>
+        <div class="cd-lbl">Mins</div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-num" id="cd-secs">59</div>
+        <div class="cd-lbl">Secs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<section>
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">Questions? <em>Answered.</em></h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3>Do I need any prior experience to join?</h3>
+      <p>Zero experience needed. The program starts from the very beginning and walks you through everything step by step. If you have a phone and internet, you can do this.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I access the course after payment?</h3>
+      <p>Immediately after payment, you'll receive an email with your unique access code and a link to our learning platform. Create your account, enter your code and start watching within 5 minutes.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is this a live class or pre-recorded videos?</h3>
+      <p>The program contains both — pre-recorded video lessons you watch at your own pace, plus weekly live review sessions that are also saved for replay.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How realistic is making ₦100k–₦500k in a month?</h3>
+      <p>Very realistic for committed students who implement what they learn. Results vary based on effort and consistency, but we have students hitting these numbers regularly. The strategies are proven in the Nigerian market.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is there a refund policy?</h3>
+      <p>Due to the digital nature of this product, we do not offer refunds once access is granted. We encourage you to review the curriculum above carefully before purchasing.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long do I have access to the content?</h3>
+      <p>Lifetime access. Once you pay, the content is yours forever. You can revisit lessons, download resources and access new updates at no extra cost.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2>Your Next ₦100,000 Is Waiting.<br><em>Will You Go Get It?</em></h2>
+  <p>Thousands of Nigerians are building real income online right now. The only difference between them and you is one decision. Make it today.</p>
+  <a href="https://paystack.shop/pay/DMC-Program" class="btn-primary">Get Access Now — ₦40,000 →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Nuel Digital Vault · All rights reserved · nueldigitalvault.vercel.app</p>
+  <p style="margin-top: 8px;">Questions? Contact us on WhatsApp or Telegram before purchasing.</p>
+</footer>
+
+<script>
+  const deadline = new Date();
+  deadline.setDate(deadline.getDate() + 7);
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = deadline - now;
+    if (diff <= 0) return;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
