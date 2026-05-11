@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Successful — DMC Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --purple: #302b63;
+    --purple-dark: #1a1640;
+    --purple-light: #8b5cf6;
+    --gold: #f59e0b;
+    --gold-light: #fbbf24;
+    --green: #10b981;
+    --bg: #0a0814;
+    --surface: #13102a;
+    --surface2: #1c1840;
+    --text: #f1f0ff;
+    --text-muted: #9ca3af;
+    --border: rgba(139,92,246,0.2);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(16,185,129,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .confetti-container {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; overflow: hidden;
+  }
+  .confetti {
+    position: absolute; opacity: 0;
+    animation: confettiFall linear forwards;
+  }
+  @keyframes confettiFall {
+    0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+
+  .page-wrap {
+    position: relative; z-index: 1;
+    max-width: 560px; width: 100%;
+    display: flex; flex-direction: column;
+    align-items: center;
+  }
+
+  .success-icon {
+    width: 88px; height: 88px; border-radius: 50%;
+    background: linear-gradient(135deg, #064e3b, #10b981);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 32px;
+    box-shadow: 0 0 60px rgba(16,185,129,0.35);
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+  }
+  @keyframes popIn {
+    0% { opacity: 0; transform: scale(0.4); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .success-icon svg { width: 44px; height: 44px; color: #fff; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 24px;
+    padding: 48px 40px;
+    text-align: center;
+    width: 100%;
+    animation: slideUp 0.7s ease 0.3s forwards;
+    opacity: 0; transform: translateY(24px);
+  }
+  @keyframes slideUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(16,185,129,0.1);
+    border: 1px solid rgba(16,185,129,0.3);
+    color: #6ee7b7; font-size: 12px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  .tag .dot {
+    width: 6px; height: 6px; background: #10b981;
+    border-radius: 50%; animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%,100%{ opacity:1; transform:scale(1);}
+    50%{ opacity:0.5; transform:scale(1.4);}
+  }
+
+  h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(26px, 6vw, 40px);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -1px; color: #fff;
+    margin-bottom: 16px;
+  }
+  h1 em { font-style: normal; color: var(--gold-light); }
+
+  .subtitle {
+    font-size: 16px; color: #c4b5fd;
+    line-height: 1.75; margin-bottom: 36px;
+  }
+
+  .email-box {
+    background: var(--purple-dark);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px 28px;
+    margin-bottom: 20px; text-align: left;
+  }
+  .email-box-title {
+    font-size: 13px; font-weight: 700;
+    color: var(--gold-light); margin-bottom: 10px;
+  }
+  .email-box p {
+    font-size: 14px; color: #c4b5fd; line-height: 1.75;
+  }
+  .email-box strong { color: #fff; }
+
+  .support-box {
+    background: rgba(16,185,129,0.06);
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 14px; padding: 20px 24px;
+    font-size: 14px; color: #6ee7b7; line-height: 1.7;
+    text-align: left;
+  }
+  .support-box strong { color: #fff; }
+  .support-box a {
+    color: #6ee7b7; font-weight: 700;
+    text-decoration: underline;
+  }
+
+  footer {
+    margin-top: 32px; font-size: 12px;
+    color: var(--text-muted); text-align: center;
+    animation: slideUp 0.7s ease 0.7s forwards;
+    opacity: 0;
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 32px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="confetti-container" id="confetti"></div>
+
+<div class="page-wrap">
+
+  <div class="success-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+  </div>
+
+  <div class="card">
+    <div class="tag"><span class="dot"></span> Payment Confirmed</div>
+
+    <h1>You're In! <em>Welcome to<br>DMC Program 🚀</em></h1>
+
+    <p class="subtitle">
+      Your payment of <strong style="color:#fff">₦40,000</strong> was successful. You're now officially part of the movement.
+    </p>
+
+    <div class="email-box">
+      <div class="email-box-title">📧 Check Your Email Now</div>
+      <p>A welcome email has been sent to your inbox with your <strong>access details and full instructions</strong> on how to get into the program. Please check your <strong>spam or promotions folder</strong> if you don't see it within 5 minutes.</p>
+    </div>
+
+    <div class="support-box">
+      Having trouble with access? Send your <strong>payment proof</strong> to us on WhatsApp and we'll sort you out immediately:<br><br>
+      <a href="https://wa.me/2347069624136" target="_blank">📲 +234 706 962 4136</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Emmanuel Ifeanyi · DMC Program · emmanuelifeanyi.vercel.app
+  </footer>
+
+</div>
+
+<script>
+  const colors = ['#f59e0b', '#10b981', '#8b5cf6', '#fbbf24', '#6ee7b7'];
+  const container = document.getElementById('confetti');
+  for (let i = 0; i < 60; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti';
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    el.style.width = (Math.random() * 7 + 4) + 'px';
+    el.style.height = (Math.random() * 7 + 4) + 'px';
+    el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    el.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    el.style.animationDelay = (Math.random() * 2) + 's';
+    container.appendChild(el);
+  }
+</script>
+</body>
+</html>
