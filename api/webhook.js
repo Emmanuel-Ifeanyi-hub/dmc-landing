@@ -42,7 +42,7 @@ export default async function handler(req, res) {
         </div>
 
         <p style="font-size: 16px; line-height: 1.7; margin-bottom: 20px;">
-          Hi ${customerName},<br><br>
+          Hi there,<br><br>
           Your payment was successful and your spot in the <strong style="color: #fbbf24;">Digital Marketing Cashflow (DMC) Program 2026</strong> is confirmed.
         </p>
 
