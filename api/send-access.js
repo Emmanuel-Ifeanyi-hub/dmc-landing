@@ -1,4 +1,4 @@
-const Brevo = require('@getbrevo/brevo');
+const SibApiV3Sdk = require('sib-api-v3-sdk');
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
@@ -7,8 +7,11 @@ module.exports = async (req, res) => {
   if (!email) return res.status(400).json({ error: 'Email is required' });
 
   try {
-    const apiInstance = new Brevo.TransactionalEmailsApi();
-    apiInstance.authentications['api-key'].apiKey = process.env.BREVO_API_KEY;
+    const defaultClient = SibApiV3Sdk.ApiClient.instance;
+    const apiKey = defaultClient.authentications['api-key'];
+    apiKey.apiKey = process.env.BREVO_API_KEY;
+
+    const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
     await apiInstance.sendTransacEmail({
       sender: { name: 'Emmanuel Ifeanyi', email: 'nuelifeanyi48@gmail.com' },
