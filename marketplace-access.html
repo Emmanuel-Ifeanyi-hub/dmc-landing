@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Your DMC Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #080808;
+    color: #F0EDE8;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px;
+  }
+
+  .card {
+    background: #111;
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 20px;
+    padding: 48px 40px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 80px rgba(201,168,76,0.08);
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: #C9A84C;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-family: 'Syne', sans-serif;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  h1 span { color: #C9A84C; }
+
+  .subtitle {
+    font-size: 15px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+    margin: 0 auto 36px;
+  }
+
+  label {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+    color: #aaa;
+    margin-bottom: 8px;
+    letter-spacing: 0.03em;
+  }
+
+  input[type="email"] {
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 15px 18px;
+    font-size: 15px;
+    color: #F0EDE8;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 16px;
+  }
+
+  input[type="email"]:focus {
+    border-color: rgba(201,168,76,0.5);
+  }
+
+  input[type="email"]::placeholder { color: #555; }
+
+  button {
+    width: 100%;
+    background: linear-gradient(135deg, #C9A84C, #a07830);
+    color: #000;
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+    letter-spacing: 0.02em;
+  }
+
+  button:hover { opacity: 0.9; transform: translateY(-1px); }
+  button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  .note {
+    font-size: 12px;
+    color: #555;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+
+  /* Success state */
+  .success-wrap {
+    display: none;
+  }
+
+  .success-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .success-wrap h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #22C55E;
+  }
+
+  .success-wrap p {
+    font-size: 15px;
+    color: #888;
+    line-height: 1.7;
+  }
+
+  .success-wrap p strong { color: #F0EDE8; }
+
+  /* Error */
+  .error-msg {
+    font-size: 13px;
+    color: #EF4444;
+    margin-top: 10px;
+    display: none;
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 36px 24px; }
+    h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- FORM STATE -->
+  <div id="form-wrap">
+    <div class="badge">🎉 PURCHASE CONFIRMED</div>
+    <h1>Welcome to the<br><span>DMC Program!</span></h1>
+    <p class="subtitle">Your purchase was successful. Enter your email below and we'll send you your access instructions and login details immediately.</p>
+    <div class="divider"></div>
+
+    <label for="email">Your Email Address</label>
+    <input type="email" id="email" placeholder="Enter the email you want to receive access on" />
+    <p class="error-msg" id="error-msg">Please enter a valid email address.</p>
+
+    <button id="submit-btn" onclick="sendAccess()">
+      Send My Access Now →
+    </button>
+
+    <p class="note">📧 Check your inbox (and spam folder) after submitting. Access instructions will arrive within 1 minute.</p>
+  </div>
+
+  <!-- SUCCESS STATE -->
+  <div class="success-wrap" id="success-wrap">
+    <span class="success-icon">✅</span>
+    <h2>Access Sent!</h2>
+    <p>Your DMC Program access instructions have been sent to <strong id="sent-email"></strong>.<br><br>Check your inbox now — if you don't see it in 2 minutes, check your spam or promotions folder.<br><br>See you inside! 🚀</p>
+  </div>
+
+</div>
+
+<script>
+async function sendAccess() {
+  const emailInput = document.getElementById('email');
+  const errorMsg = document.getElementById('error-msg');
+  const btn = document.getElementById('submit-btn');
+  const email = emailInput.value.trim();
+
+  // Basic validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    errorMsg.style.display = 'block';
+    return;
+  }
+
+  errorMsg.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch('/api/marketplace-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      document.getElementById('form-wrap').style.display = 'none';
+      document.getElementById('sent-email').textContent = email;
+      document.getElementById('success-wrap').style.display = 'block';
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Send My Access Now →';
+      alert('Something went wrong. Please try again or contact support on WhatsApp: 07069624136');
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Send My Access Now →';
+    alert('Network error. Please check your connection and try again.');
+  }
+}
+
+// Allow Enter key to submit
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') sendAccess();
+});
+</script>
+
+</body>
+</html>
