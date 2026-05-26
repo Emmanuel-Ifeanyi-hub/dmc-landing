@@ -1,7 +1,4 @@
 {
   "name": "dmc-landing",
-  "version": "1.0.0",
-  "dependencies": {
-    "sib-api-v3-sdk": "^3.2.2"
-  }
+  "version": "1.0.0"
 }
