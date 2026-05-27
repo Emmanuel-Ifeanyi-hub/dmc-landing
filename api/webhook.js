@@ -1,19 +1,30 @@
 const crypto = require('crypto');
 
 module.exports = async (req, res) => {
+  console.log('Webhook received:', req.method);
+  console.log('Headers:', JSON.stringify(req.headers));
+  console.log('Body:', JSON.stringify(req.body));
+
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   const secret = process.env.PAYSTACK_SECRET_KEY;
+  console.log('Secret exists:', !!secret);
+  
   const hash = crypto.createHmac('sha512', secret).update(JSON.stringify(req.body)).digest('hex');
+  console.log('Expected hash:', hash);
+  console.log('Received hash:', req.headers['x-paystack-signature']);
 
   if (hash !== req.headers['x-paystack-signature']) {
+    console.log('Signature mismatch - rejecting');
     return res.status(401).json({ error: 'Invalid signature' });
   }
 
   const event = req.body;
+  console.log('Event type:', event.event);
 
   if (event.event === 'charge.success') {
     const email = event.data.customer.email;
+    console.log('Sending email to:', email);
 
     try {
       const response = await fetch('https://api.brevo.com/v3/smtp/email', {
@@ -26,7 +37,7 @@ module.exports = async (req, res) => {
           sender: { name: 'Emmanuel Ifeanyi', email: 'nuelifeanyi48@gmail.com' },
           to: [{ email }],
           subject: 'Your DMC Program Access is Ready 🔥',
-          html: `
+          htmlContent: `
             <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#0a0814;color:#f1f0ff;padding:40px;border-radius:12px;">
               <h1 style="color:#f59e0b;">Welcome to DMC! 🎉</h1>
               <p style="color:#c4b5fd;">Your payment was successful. Here's everything you need to get started:</p>
@@ -55,6 +66,8 @@ module.exports = async (req, res) => {
       if (!response.ok) {
         const err = await response.text();
         console.error('Brevo error:', err);
+      } else {
+        console.log('Email sent successfully');
       }
     } catch (err) {
       console.error('Email error:', err);
