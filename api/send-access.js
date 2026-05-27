@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
         sender: { name: 'Emmanuel Ifeanyi', email: 'nuelifeanyi48@gmail.com' },
         to: [{ email }],
         subject: 'Your DMC Program Access is Ready 🔥',
-        html: `
+        htmlContent: `
           <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#0a0814;color:#f1f0ff;padding:40px;border-radius:12px;">
             <h1 style="color:#f59e0b;">Welcome to DMC! 🎉</h1>
             <p style="color:#c4b5fd;">Your payment was successful. Here's everything you need to get started:</p>
@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
               <p style="margin:0 0 8px;font-size:13px;color:#9ca3af;text-transform:uppercase;letter-spacing:2px;">Step 4 — Join the Community</p>
               <p style="margin:0;color:#e0d7ff;">Your first lesson inside the platform has the Telegram community link.</p>
             </div>
-            <p style="color:#9ca3af;font-size:14px;text-align:center;">Having issues? WhatsApp: <a href="https://wa.me/2347069624136" style="color:#f59e0b;">07069624136</a></p>
+            <p style="color:#9ca3af;font-size:14px;text-align:center;">Having issues? WhatsApp: <a href="https://wa.me/2348101491009" style="color:#f59e0b;">07069624136</a></p>
           </div>
         `
       })
