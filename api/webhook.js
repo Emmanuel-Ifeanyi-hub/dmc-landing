@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
 
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const secret = process.env.PAYSTACK_SECRET_KEY;
+  const secret = process.env.PAYSTACK_SECRET;
   console.log('Secret exists:', !!secret);
   
   const hash = crypto.createHmac('sha512', secret).update(JSON.stringify(req.body)).digest('hex');
