@@ -1,3 +1,7 @@
 {
-  "rewrites": [{"source": "/(.*)", "destination": "/index.html"}]
+  "redirects": [
+    { "source": "/", "destination": "https://emmanuelifeanyi.com.ng/dashboard", "permanent": true },
+    { "source": "/:path*", "destination": "https://emmanuelifeanyi.com.ng/dashboard/:path*", "permanent": true }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
