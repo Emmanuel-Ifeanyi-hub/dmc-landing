@@ -1,3 +1,11 @@
 {
-  "rewrites": [{"source": "/(.*)", "destination": "/index.html"}]
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "emmanuelifeanyi.vercel.app" }],
+      "destination": "https://app.emmanuelifeanyi.com.ng/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
