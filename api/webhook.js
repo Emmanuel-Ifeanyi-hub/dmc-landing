@@ -43,7 +43,7 @@ module.exports = async (req, res) => {
               <p style="color:#c4b5fd;">Your payment was successful. Here's everything you need to get started:</p>
               <div style="background:#1c1840;border:1px solid rgba(139,92,246,0.3);border-radius:10px;padding:24px;margin-bottom:24px;">
                 <p style="margin:0 0 8px;font-size:13px;color:#9ca3af;text-transform:uppercase;letter-spacing:2px;">Step 1 — Visit the Platform</p>
-                <a href="https://https://dashboard.emmanuelifeanyi.com.ng" style="color:#f59e0b;font-weight:bold;">https://dashboard.emmanuelifeanyi.com.ng</a>
+                <a href="https://dashboard.emmanuelifeanyi.com.ng" style="color:#f59e0b;font-weight:bold;">https://dashboard.emmanuelifeanyi.com.ng</a>
               </div>
               <div style="background:#1c1840;border:1px solid rgba(139,92,246,0.3);border-radius:10px;padding:24px;margin-bottom:24px;">
                 <p style="margin:0 0 8px;font-size:13px;color:#9ca3af;text-transform:uppercase;letter-spacing:2px;">Step 2 — Create Your Account</p>
