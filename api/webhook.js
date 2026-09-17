@@ -43,7 +43,7 @@ module.exports = async (req, res) => {
               <p style="color:#c4b5fd;">Your payment was successful. Here's everything you need to get started:</p>
               <div style="background:#1c1840;border:1px solid rgba(139,92,246,0.3);border-radius:10px;padding:24px;margin-bottom:24px;">
                 <p style="margin:0 0 8px;font-size:13px;color:#9ca3af;text-transform:uppercase;letter-spacing:2px;">Step 1 — Visit the Platform</p>
-                <a href="https://nueldigitalvault.vercel.app" style="color:#f59e0b;font-weight:bold;">nueldigitalvault.vercel.app</a>
+                <a href="https://https://dashboard.emmanuelifeanyi.com.ng" style="color:#f59e0b;font-weight:bold;">https://dashboard.emmanuelifeanyi.com.ng</a>
               </div>
               <div style="background:#1c1840;border:1px solid rgba(139,92,246,0.3);border-radius:10px;padding:24px;margin-bottom:24px;">
                 <p style="margin:0 0 8px;font-size:13px;color:#9ca3af;text-transform:uppercase;letter-spacing:2px;">Step 2 — Create Your Account</p>
@@ -57,7 +57,7 @@ module.exports = async (req, res) => {
                 <p style="margin:0 0 8px;font-size:13px;color:#9ca3af;text-transform:uppercase;letter-spacing:2px;">Step 4 — Join the Community</p>
                 <p style="margin:0;color:#e0d7ff;">Your first lesson inside the platform has the Telegram community link.</p>
               </div>
-              <p style="color:#9ca3af;font-size:14px;text-align:center;">Having issues? WhatsApp: <a href="https://wa.me/2347069624136" style="color:#f59e0b;">07069624136</a></p>
+              <p style="color:#9ca3af;font-size:14px;text-align:center;">Having issues? WhatsApp: <a href="https://wa.me/2348101491009" style="color:#f59e0b;">08101491009</a></p>
             </div>
           `
         })
