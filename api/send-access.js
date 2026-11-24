@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
         'content-type': 'application/json'
       },
       body: JSON.stringify({
-        sender: { name: 'Emmanuel Ifeanyi', email: 'nuelifeanyi48@gmail.com' },
+        sender: { name: 'Emmanuel Ifeanyi', email: 'hello@emmanuelifeanyi.com.ng' },
         to: [{ email }],
         subject: 'Your DMC Program Access is Ready 🔥',
         htmlContent: `
